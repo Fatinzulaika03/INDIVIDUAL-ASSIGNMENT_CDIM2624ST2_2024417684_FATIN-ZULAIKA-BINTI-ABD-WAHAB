@@ -39,7 +39,7 @@ body {
 .card-login {
     width: 600px; 
     max-width: 800px; 
-    height: 300px; 
+    height: auto; 
     margin: auto;
     background-color: rgba(255, 255, 255, 0.5) ;
     border: none;
