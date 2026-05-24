@@ -1,0 +1,124 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #ffffff; 
+    color: #212529;
+    display: flex;
+    flex-direction: column;
+}
+*/
+.navbar-pastel {
+    background-color: #E6E6FA ;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.result-container, .table-container {
+    max-width: 950px; 
+    margin: 0 auto; 
+    background-color: #ffffff; 
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.bg-custom-purple { 
+    background-color: #4A154B; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-login {
+    width: 600px; 
+    max-width: 800px; 
+    height: 300px; 
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.5) ;
+    border: none;
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-login .card-body {
+    width: 100%;
+    padding: 20px 40px ;
+}
+#errorAlert {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    font-size: 0.75rem;
+    padding: 4px;
+    z-index: 10;
+}
+
+.logo-icon {
+    font-size: 65px;
+    color: #4A154B;
+}
+
+.vr {
+    height: 100px;
+}
+
+.form-label {
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+}
+
+.form-control {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+}
+
+.text-purple-name { color: #968396 !important; font-style: italic; font-weight: 400; }
+.profile-icon { font-size: 80px; color: #968396; display: block; margin-bottom: 20px; text-align: center; }
+.course-text { line-height: 1.8; text-align: justify; }
+
+.custom-simple-table thead th {
+    background-color: #f8f9fa;
+    color: #4A154B;
+    border-bottom: 2px solid #E6E6FA;
+    padding: 12px;
+}
+
+.footer-section {
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 15px 0;
+    margin-top: auto;
+    text-align: center;
+}
+
+.footer-section p.fw-bold {
+    letter-spacing: 0.8px;
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 2px;
+}
+
+.footer-section .text-muted {
+    color: rgba(255,255,255,0.7);
+}
+
+/* --- 8. Dark Mode --- */
+[data-bs-theme="dark"] body { background-color: #121212 ; color: white; }
+[data-bs-theme="dark"] .result-container { background-color: #1e1e1e; border-color: #333; }
+[data-bs-theme="dark"] .navbar-pastel { background-color: #2b2735 ; }
+[data-bs-theme="dark"] .table { color: white; border-color: #444; }
+[data-bs-theme="dark"] .apexcharts-xaxis-label, [data-bs-theme="dark"] .apexcharts-yaxis-label { fill: #ffffff ; }
