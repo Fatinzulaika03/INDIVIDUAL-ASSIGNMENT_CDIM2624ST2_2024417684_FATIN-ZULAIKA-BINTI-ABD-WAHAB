@@ -3,140 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portal - Login</title>
-    
+    <title>Login - StudentPortal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&family=Saira+Stencil:wght@100..900&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="css/style.css">
-
     <style>
-        /* Ensuring background covers the full screen for the Vanta effect */
-        #vanta-canvas {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        .bg-custom-purple {
-            background-color: #4a3460;
-        }
-        .card-login {
-            max-width: 600px;
-            width: 100%;
-            border: none;
-            border-radius: 15px;
-        }
-        .logo-icon {
-            font-size: 5rem;
-            color: #7f5390;
-        }
-        .bg-purple {
-            background-color: #7f5390;
-        }
-        .bg-purple:hover {
-            background-color: #6a447a;
-        }
+        #vanta-canvas { min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; background-color: #4a3460; }
+        .card-login { max-width: 800px; width: 100%; border-radius: 20px; overflow: hidden; }
+        .logo-icon { font-size: clamp(4rem, 10vw, 6rem); color: #7f5390; }
+        @media (max-width: 767px) { .vr-divider { display: none; } }
     </style>
 </head>
-
-<body id="vanta-canvas" class="bg-custom-purple">
-    
-    <div class="d-flex flex-grow-1 justify-content-center align-items-center">
-        <div class="card shadow mx-2 card-login">
-            <div class="card-body p-4">
-                <h5 class="text-center mb-4 fw-bold">LOGIN</h5>
-                
-                <div id="errorAlert" class="alert alert-danger py-2 text-center d-none" role="alert" style="font-size: 0.85rem;">
-                    <i class="bi bi-exclamation-triangle-fill me-2"></i>Invalid username/password
+<body id="vanta-canvas">
+    <div class="card shadow card-login">
+        <div class="card-body p-0">
+            <div class="row g-0">
+                <div class="col-md-5 d-flex align-items-center justify-content-center bg-light p-4 position-relative">
+                    <i class="fa-solid fa-graduation-cap logo-icon"></i>
+                    <div class="vr-divider d-none d-md-block position-absolute end-0" style="height: 70%; width: 1px; background-color: #dee2e6;"></div>
                 </div>
-
-                <div class="row g-0">
-                    <div class="col-md-6 d-flex align-items-center justify-content-center position-relative">
-                        <i class="fa-solid fa-graduation-cap logo-icon"></i>
-                        <div class="vr d-none d-md-block position-absolute end-0 my-3" style="height: 80%; top: 10%;"></div>
+                <div class="col-md-7 p-4 p-lg-5">
+                    <h4 class="fw-bold text-center mb-4">LOGIN</h4>
+                    <div id="errorAlert" class="alert alert-danger d-none small">Username/Password Salah</div>
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold">Username</label>
+                        <input type="text" id="username" class="form-control" placeholder="student">
                     </div>
-                    
-                    <div class="col-md-6 ps-md-4 mt-4 mt-md-0">
-                        <div class="mb-3">
-                            <label for="username" class="form-label small fw-bold">Username</label>
-                            <input type="text" id="username" class="form-control" placeholder="Enter username">
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="password" class="form-label small fw-bold">Password</label>
-                            <input type="password" id="password" class="form-control" placeholder="Enter password"> 
-                        </div>
-
-                        <div class="text-end">
-                            <button type="button" id="loginBtn" class="btn bg-purple text-white btn-sm px-4">Login</button>
-                        </div>
+                    <div class="mb-4">
+                        <label class="form-label small fw-bold">Password</label>
+                        <input type="password" id="password" class="form-control" placeholder="11111">
                     </div>
+                    <div class="d-grid"><button id="loginBtn" class="btn bg-purple text-white fw-bold">MASUK</button></div>
                 </div>
             </div>
         </div>
     </div>
-
-    <footer class="footer-section py-4 mt-auto">
-        <div class="container text-center">
-            <p class="mb-1 fw-bold text-dark-emphasis">Prepared by: Fatin Zulaika Abd Wahab</p>
-            <p class="mb-0 text-muted">&copy; 2026 StudentPortal. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
-
     <script>
-        // Initialize Vanta Net Background
-        VANTA.NET({
-            el: "#vanta-canvas",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color: 0x7f5390,
-            backgroundColor: 0x4a3460
-        })
-
-        // Login Authentication Logic
-        document.getElementById('loginBtn').addEventListener('click', function(event) {
-            const validUsername = "student";
-            const validPassword = "11111";
-
-            const usernameBox = document.getElementById('username');
-            const passwordBox = document.getElementById('password');
-            const errorAlert = document.getElementById('errorAlert');
-
-            // Reset states
-            errorAlert.classList.add('d-none');
-            usernameBox.classList.remove('is-invalid');
-            passwordBox.classList.remove('is-invalid');
-
-            if (usernameBox.value.trim() === validUsername && passwordBox.value === validPassword) {
-                // Redirect to the HTML version of the dashboard
-                window.location.href = "dashboard.html"; 
-            } else {
-                // Show error
-                errorAlert.classList.remove('d-none');
-                usernameBox.classList.add('is-invalid');
-                passwordBox.classList.add('is-invalid');
-            }
-        });
-
-        // Allow "Enter" key to trigger login
-        document.addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') {
-                document.getElementById('loginBtn').click();
-            }
+        VANTA.NET({ el: "#vanta-canvas", mouseControls: true, touchControls: true, color: 0x7f5390, backgroundColor: 0x4a3460 });
+        document.getElementById('loginBtn').addEventListener('click', () => {
+            if(document.getElementById('username').value === 'student' && document.getElementById('password').value === '11111') {
+                window.location.href = "dashboard.html";
+            } else { document.getElementById('errorAlert').classList.remove('d-none'); }
         });
     </script>
 </body>
